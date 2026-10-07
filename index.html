@@ -1,0 +1,55 @@
+<!-- Cetinweb | İtibar QR Oluşturucu -->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>İtibar QR Oluşturucu</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page-wrap">
+    <section class="panel">
+      <div class="brand-badge">İTİBAR</div>
+      <h1>İtibar QR Oluşturucu</h1>
+      <p class="subtitle">Çocuk ve veli bilgilerini girin, güvenlik amaçlı QR kodunu saniyeler içinde oluşturun.</p>
+
+      <form id="qrForm">
+        <div class="field">
+          <label for="childName">Çocuk Adı Soyadı</label>
+          <input id="childName" type="text" placeholder="Örn. Ahmet Yılmaz" maxlength="80" required />
+        </div>
+
+        <div class="field">
+          <label for="parentName">Veli Adı Soyadı</label>
+          <input id="parentName" type="text" placeholder="Örn. Mehmet Yılmaz" maxlength="80" required />
+        </div>
+
+        <div class="field">
+          <label for="parentPhone">Veli Telefon Numarası</label>
+          <input id="parentPhone" type="tel" inputmode="numeric" placeholder="Örn. 5321234567" maxlength="10" required />
+          <small>Telefon numarasını başında <strong>0 olmadan</strong> giriniz. Örn: 5321234567</small>
+        </div>
+
+        <button class="primary-btn" type="submit">QR Oluştur</button>
+      </form>
+
+      <div id="result" class="result hidden">
+        <div class="qr-card" id="printArea">
+          <div id="qrcode"></div>
+        </div>
+
+        <div class="actions">
+          <button id="testBtn" type="button" class="secondary-btn">Test Et</button>
+          <button id="downloadBtn" type="button" class="secondary-btn">QR PNG İndir</button>
+          <button id="printBtn" type="button" class="secondary-btn">Yazdır</button>
+          <button id="resetBtn" type="button" class="ghost-btn">Yeni QR</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
